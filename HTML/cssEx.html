@@ -4,12 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=, initial-scale=1.0">
-    <title>CSS</title>
+    <title>CSS
+
+    </title>
 </head>
 <body>
     <div>
         <h2>CSS EXAMPLE</h2>
     </div>
+    <p class="positionfixed"> jfufvjhbvkgjhkihiljhlk</p> 
+    <p class="positionsticky"> jfufvjhbvkgjhkihiljhlk</p> 
     <p style="color:blueviolet;margin:50px" class="txtContent">This is a example paragraph for html demo using this we can get a idea abt paragraph</p>
     <img src="./asserts/dog.png" id="dogimg"/>
     <span class="txtContent">It is a example for styling tags</span>
@@ -18,7 +22,7 @@
         <li>woodapple</li> 
         <li>greenapple</li> 
      </ol>
-    <table>
+    <table class="tableContent">
         <tr>
             <th>name</th>
             <th>id</th>
@@ -38,10 +42,144 @@
             <td>ece</td>
         </tr> 
     </table>
+    <div class="dropdown">
+        <span>I'm a dropdown hover on me</span>
+        <div class="dropdown-content">
+          <p>Hi</p>
+          <p>Hello</p>
+          <p>Hey</p>
+        </div>
+      </div>
+      <div class="loginbox">
+      <table>
+        <tr>
+            <td>FirstName :</td>
+            <td><input type="text" name="fName" placeholder="Enter Firstname"/></td>
+        </tr>
+        <tr>
+            <td>Password :</td>
+            <td><input type="password" name="password"/></td>
+        </tr>
+        <tr>
+            <td><input type="button" value="Login" /></td>
+        </tr> 
+      </table>
+    </div>
+    <footer>
+        Copyrites@2024
+    </footer>
+    <div>
+        <h2>CSS EXAMPLE</h2>
+    </div>
+    <div class="posDiv" style="background-color: aquamarine;">
+        <h3>Static</h3>
+        <div class="posIndDiv" id="posStatic">1</div>
+        <span>2</div>
+        <span>3</div>
+    </div>
+    <div class="posDiv" style="background-color: blueviolet;">
+        <h3>Relative</h3>
+        <div class="posIndDiv" id="posRelative">1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <div class="posDiv" style="background-color: darkkhaki;">
+        <h3>Absolute</h3>
+        <div class="posIndDiv" id="posStatic">1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <div class="posDiv" style="background-color: darksalmon;">
+        <h3>fixed</h3>
+        <div class="posIndDiv" id="posFixed">1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+    <div class="posDiv" style="background-color: darkslategrey;">
+        <h3>Sticky</h3>
+        <div class="posIndDiv" id="posSticky">1</div>
+        <div>2</div>
+        <div>3</div>
+    </div>
+
 <style>
     /* *{
         border:solid red 5px
     } */
+    #posStatic{
+        position:static
+    }
+    #posRelative{
+        display: flex;
+        position:relative;
+        margin-left: 200px;
+        background-color: green;
+    }
+    #posAbsolute{
+        display: flex;
+        position:absolute;
+        margin-left: 300px;
+        margin-top: 300px;
+        left:600px;
+        background-color: coral;
+    }
+    #posFixed{
+        display: flex;
+        position:fixed;
+        left: 300px;
+        top:300px;
+        background-color: brown;
+    }
+    #posSticky{
+        display: flex;
+        position:sticky;
+        left: 400px;
+        top: 500px;
+        background-color: plum;
+    }
+    .posDiv{
+        margin-bottom: 150px;
+        width:200px;
+        height:200px;
+    }
+    .posIndDiv{
+        width:50px;
+        height: 50px;
+        border: solid 2px brown;
+    }
+    /* div{
+        width: 100px;
+        height: 100px;
+        border: solid 2px goldenrod;
+        padding: 100px;
+        margin: 20px;
+    } */
+    .loginbox{
+        border-style: solid;
+        border-radius: 200px;
+        border-top-left-radius: 30px ;
+        border-width: 100px;
+        border-top-color: red;
+        width:40%;
+        height:250px;
+        margin-top: 20%;
+        margin-bottom: 20%;
+        margin-left: 30%;
+        margin-right: 30%;
+        padding-top: 120px;
+        padding-left: 120px;
+        padding-right: 120px;
+        background-image: url(./asserts/dog.png);
+        background-repeat: no-repeat;
+        background-size: cover;
+        color: white;
+
+    }
+    footer{
+        text-align: center;
+        background-color: black;
+        color:white;
+    }
     h2{
         color:darkred
     }
@@ -55,10 +193,46 @@
     .txtContent{
         margin:40px;
         border:dotted yellowgreen 2px;
+        text-align: center;
+        background-color: pink;
+        border-color: black;
+        border-radius: 50px;
+        border-bottom-color: aqua;
+        border-left-color:orange ;
+        border-width: 5px;
+        font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        font-size: 25px;
+        font-style: italic;
+        font-weight: 100;
+    }
+    .positionfixed{
+        position: fixed;
+    }
+    .positionsticky{
+        position: sticky;
     }
     #dogimg{
+        margin-left: 100px;
         width:300px;
         height:300px;
+    }
+    .tableContent{
+        margin-right: 50px;
+        padding-left: 40px;
+    }
+    .dropdown {
+        position: relative;
+        display: inline-block;
+    }
+    .dropdown-content {
+        display: none;
+        position: absolute;
+        background-color: red;
+        min-width: 160px;
+        padding: 12px 16px;
+    }
+    .dropdown:hover .dropdown-content {
+        display: block;
     }
 </style>
 
