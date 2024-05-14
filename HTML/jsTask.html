@@ -14,20 +14,23 @@
         <div class="row">
             <h2>Task 1</h2>
             <div class="row m-4">
-                <div class="col"><label>Number Check</label></div>
+                <div class="col"><label>Number Sign Check</label></div>
                 <div class="col"><input type="number" id="numberCalc" name="numberCalc" onkeyup="numberCalc()" class="form-control"/></div>
                 <div class="col"><span id="numberCalcMsg"></span></div>
             </div>         
             <script>
             function numberCalc(){
-                    let number = Number(document.getElementById('numberCalc').value);
+                    let signnumber = Number(document.getElementById('numberCalc').value);
                     let msg = "";
-                    if(number > 0){
+                    if(signnumber > 0){
                             msg = "The Given Number is Positive Number";
                         }
-                    else{
+                    else if(signnumber < 0){
                             msg="The Given Number is Negative Number";
                         }
+                    else{
+                        msg="The Given Number is 0 Which Is Neither Negative Nor A Postive Number"; 
+                    }
 
                     document.getElementById('numberCalcMsg').innerHTML = msg;
                 }
@@ -133,7 +136,7 @@
                         fullformmsg = "one";
                         }
                     else if(fullformnumber== 2){
-                        fullformmsg="second";
+                        fullformmsg="two";
                         }
                     else if(fullformnumber== 3){
                         fullformmsg="three";
