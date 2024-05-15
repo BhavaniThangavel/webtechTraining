@@ -10,7 +10,7 @@
 </head>
 <body onload="showMsg()">
     <div class="container">
-        <h1 style="text-align: center;">JS TASK</h1>
+        <h1 style="text-align: center;">JS TASK 1</h1>
         <div class="row">
             <h2>Task 1</h2>
             <div class="row m-4">
@@ -152,6 +152,176 @@
                 }
             </script>
         </div>
+        <h1 style="text-align: center;">JS TASK2</h1>
+        <div class="row">
+            <h2>Task 1</h2>
+            <div class="row m-4">
+                <div class="col"><label>Print Final Bill</label></div>
+                <div class="col"><input type="number" id="billamount" name="billamount" onkeyup="billamountCalc()" class="form-control"/></div>
+                <div class="col"><span id="billamountCalcMsg"></span></div>
+            </div>         
+            <script>
+            function billamountCalc(){
+                    let billamount = Number(document.getElementById('billamount').value);
+                    let billamountmsg = "";
+                    if(billamount > 2000){
+                        billamountmsg = "As the bill amount is greater than 2000, 10% of discount is applied and the final billamount is "+ (billamount - billamount * (10/100));
+                        }
+
+                    else{
+                        billamountmsg="The Final bill amount is "+ billamount
+                    }
+
+                    document.getElementById('billamountCalcMsg').innerHTML = billamountmsg;
+                }
+            </script>
+        </div>
+        <div class="row">
+            <h2>Task 2</h2>
+            <div class="row m-4">
+                <div class="col"><label>Print Revised Salary</label></div>
+                <div class="col"><input type="number" id="salaryCalc" name="salaryCalc"  class="form-control"/></div>
+                <div class="col"><input type="number" id="expCalc" name="expCalc"  class="form-control"/></div>
+                <div class="col"><span id="revisedsalaryCalcMsg"></span></div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary" onclick="revisedsalaryCalc()">Revised Salary</button>
+                </div>
+            </div>         
+            <script>
+            function revisedsalaryCalc(){
+                    let salary = Number(document.getElementById('salaryCalc').value);
+                    let experience = Number(document.getElementById('expCalc').value);
+                    let revisedsalaryCalcMsg = "";
+                    if((salary < 30000) && (experience>3)){
+                        revisedsalaryCalcMsg = "The Revised Salary is "+ (salary + salary * (30/100)); 
+                        }
+                    else{
+                        revisedsalaryCalcMsg="The Revised Salary is "+ salary;
+                        }
+
+                    document.getElementById('revisedsalaryCalcMsg').innerHTML = revisedsalaryCalcMsg;
+                }
+            </script>  
+        </div>
+        <div class="row">
+            <h2>Task 3</h2>
+            <div class="row m-4">
+                <div class="col"><label>Print Final Bill With Payment Mode</label></div>
+                <div class="col"><input type="number" id="billamtCalc" name="billamtCalc"  class="form-control"/></div>
+                <div class="col">
+                    <select id="paymentmodeCalc" onchange="showPaymentmode()" class="form-select">
+                        <option>--Select Payment Mode--</option>
+                        <option>Card</option>
+                        <option>Cash</option>
+                    </select>
+                </div>
+                <div class="col"><span id="finalbillamtCalcMsg"></span></div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary" onclick="revisedbillamtCalc()">Revised Bill Amount</button>
+                </div>
+            </div>         
+            <script>
+            function revisedbillamtCalc(){
+                    let billamt = Number(document.getElementById('billamtCalc').value);
+                    let paymentmode = (document.getElementById('paymentmodeCalc').value);
+                    let finalbillamtCalcMsg = "";
+                    if(paymentmode == 'Card'){
+                        finalbillamtCalcMsg = "The Final Bill Amount is "+ (billamt + billamt * (3/100) + billamt * (5/100)); 
+                        }
+                    else if (paymentmode == 'Cash'){
+                        finalbillamtCalcMsg="The Final Bill Amount is "+ (billamt + billamt * (5/100));
+                        }
+                        else{
+                            alert("Please Select Any Of The Payment Mode Below")
+                        }
+
+                    document.getElementById('finalbillamtCalcMsg').innerHTML = finalbillamtCalcMsg;
+                }
+                function showPaymentmode(){
+                   document.getElementById('paymentmodeCalc').value ;
+                }
+            </script>  
+        </div>
+        <div class="row">
+            <h2>Task 4</h2>
+            <div class="row m-4">
+                <div class="col"><label>Print User Status</label></div>
+                <div class="col"><input type="number" id="days" name="days"  class="form-control"/></div>
+                <div class="col"><input type="number" id="attendence" name="attendence"  class="form-control"/></div>
+                <div class="col">
+                    <select id="userStatus" onchange="showUserstatus()" class="form-select">
+                        <option>--Select User Status--</option>
+                        <option>Yes</option>
+                        <option>No</option>
+                    </select>
+                </div>
+                <div class="col"><span id="UserStatusCalcMsg"></span></div>
+                <div class="col">
+                    <button type="button" class="btn btn-primary" onclick="UserStatusCalc()">User Status</button>
+                </div>
+            </div>         
+            <script>
+            function UserStatusCalc(){
+                    let noofdays = Number(document.getElementById('days').value);
+                    let daysattended = Number(document.getElementById('attendence').value);
+                    let status = (document.getElementById('userStatus').value);
+                    let GetUserStatusCalcMsg = "";
+                    if((daysattended >75) || (status == 'Yes'))
+                    {
+                        GetUserStatusCalcMsg = "The User Is Allowed"; 
+                        }
+                    else if(status == '--Select User Status--')
+                    {
+                        alert("The User Has Not Selected Leave Status"); 
+                        }
+                    else {
+                        GetUserStatusCalcMsg="The User Is Not Allowed"; 
+                        }
+                        
+
+                    document.getElementById('UserStatusCalcMsg').innerHTML = GetUserStatusCalcMsg;
+                }
+                function showUserstatus(){
+                   document.getElementById('userStatus').value ;
+                }
+            </script>  
+        </div>
+        <div class="row">
+            <h2>Task 5</h2>
+            <div class="row m-4">
+                <div class="col"><label>Grade Check</label></div>
+                <div class="col"><input type="number" id="gradeCalc" name="gradeCalc" onkeyup="gradeCalc()" class="form-control"/></div>
+                <div class="col"><span id="gradeCalcMsg"></span></div>
+            </div>         
+            <script>
+            function gradeCalc(){
+                    let grade = Number(document.getElementById('gradeCalc').value);
+                    let grademsg = "";
+                    if(grade >=90){
+                        grademsg  = "The Grade Is A";
+                        }
+                    else if(grade >=80){
+                        grademsg  = "The Grade Is B";
+                        }
+                    else if(grade >=70){
+                        grademsg  = "The Grade Is C";
+                        }
+                    else if(grade >=60){
+                        grademsg  = "The Grade Is D";
+                        }
+                    else if(grade >=50){
+                        grademsg  = "The Grade Is E";
+                        }
+                    else{
+                        grademsg  = "The Grade Is F";
+                    }
+
+                    document.getElementById('gradeCalcMsg').innerHTML = grademsg;
+                }
+            </script>
+        
+        </div>   
+
     </div>                      
 </body>
 </html>
