@@ -243,48 +243,40 @@
             </script>  
         </div>
         <div class="row">
-            <h2>Task 4</h2>
-            <div class="row m-4">
-                <div class="col"><label>Print User Status</label></div>
-                <div class="col"><input type="number" id="days" name="days"  class="form-control"/></div>
-                <div class="col"><input type="number" id="attendence" name="attendence"  class="form-control"/></div>
-                <div class="col">
-                    <select id="userStatus" onchange="showUserstatus()" class="form-select">
-                        <option>--Select User Status--</option>
-                        <option>Yes</option>
-                        <option>No</option>
-                    </select>
-                </div>
-                <div class="col"><span id="UserStatusCalcMsg"></span></div>
-                <div class="col">
-                    <button type="button" class="btn btn-primary" onclick="UserStatusCalc()">User Status</button>
-                </div>
-            </div>         
-            <script>
-            function UserStatusCalc(){
-                    let noofdays = Number(document.getElementById('days').value);
-                    let daysattended = Number(document.getElementById('attendence').value);
-                    let status = (document.getElementById('userStatus').value);
-                    let GetUserStatusCalcMsg = "";
-                    if((daysattended >75) || (status == 'Yes'))
-                    {
-                        GetUserStatusCalcMsg = "The User Is Allowed"; 
-                        }
-                    else if(status == '--Select User Status--')
-                    {
-                        alert("The User Has Not Selected Leave Status"); 
-                        }
-                    else {
-                        GetUserStatusCalcMsg="The User Is Not Allowed"; 
-                        }
-                        
 
-                    document.getElementById('UserStatusCalcMsg').innerHTML = GetUserStatusCalcMsg;
+        <h2>Task 4</h2>
+        <div class="row my-4">
+            <div class="col">Allow Student Base don attendance Percent</div>
+            <div class="col">
+                <input type="number" id="totDays" class="form-control" placeholder="Total Days"/>
+                <input type="number" id="attDays" class="form-control" placeholder="Attendance Days"/>
+                <select id="mdLeave" class="form-select">
+                    <option>No</option>
+                    <option>Yes</option>
+                </select>
+                <button type="button" class="btn btn-primary" onclick="findStudentEligibility()">Find Eligibility</button>
+            </div>
+            <div class="col"><span id="attStdAllowMsg"></span></div>
+            <script>
+                function findStudentEligibility(){
+                    let totDays = Number(document.getElementById('totDays').value);
+                    let attDays = Number(document.getElementById('attDays').value);
+                    let mdLeave = document.getElementById('mdLeave').value;
+                    let msg = document.getElementById('attStdAllowMsg');
+                    let result = "";
+                    let attPercent = (100*attDays)/totDays;
+
+                    if(attPercent > 75 || mdLeave == "Yes"){
+                        result = "Allowed";
+                        msg.style.backgroundColor = "green";
+                    }else{
+                        result = "Not Allowed";
+                        msg.className = "bg-danger";
+                    }
+                    msg.innerHTML = result;
                 }
-                function showUserstatus(){
-                   document.getElementById('userStatus').value ;
-                }
-            </script>  
+            </script>
+        </div>
         </div>
         <div class="row">
             <h2>Task 5</h2>
