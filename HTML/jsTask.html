@@ -152,7 +152,7 @@
                 }
             </script>
         </div>
-        <h1 style="text-align: center;">JS TASK2</h1>
+        <h1 style="text-align: center;">JS TASK 2</h1>
         <div class="row">
             <h2>Task 1</h2>
             <div class="row m-4">
@@ -311,9 +311,307 @@
                     document.getElementById('gradeCalcMsg').innerHTML = grademsg;
                 }
             </script>
-        
         </div>   
+        <h1 style="text-align: center;">JS TASK 3</h1>
+        <style> 
+            #nl {
+              
+              background-color: rgb(160, 158, 157);
+              border-right:dotted ;
+              
+            }
+            #nr {
+              
+              background-color: rgb(160, 158, 157);
+              
+            }
+            #el {
+              
+              background-color: rgb(160, 158, 157);
+              
+            }
+            #er {
+              
+              background-color: rgb(160, 158, 157);
+              border-top: dotted;
+              
+            }
+            #wl {
+              
+              background-color: rgb(160, 158, 157);
+              
+            }
+            #wr {
+              
+              background-color: rgb(160, 158, 157);
+              border-bottom: dotted;
+              
+            }
+            #sl {
+              
+              background-color: rgb(160, 158, 157);
+              
+            }
+            #sr {
+              
+              background-color: rgb(160, 158, 157);
+              border-right: dotted;
 
+              
+            }
+            #wr1 {
+              
+              background-color: rgb(160, 158, 157);
+              
+            }
+            #er1 {
+              
+              background-color: rgb(160, 158, 157);
+              
+            }
+            #wl1 {
+              
+              background-color: rgb(160, 158, 157);
+              
+            }
+            #el1 {
+              
+              background-color: rgb(160, 158, 157);
+              
+            }
+            
+            </style>
+    
+        <div class="container-fluid">
+        <div class="row" style="height: 200px;">
+            <div class="col-4  bg-dark"></div>
+            <div class=" col-2 " id="nl">
+                NL</div>
+            <div class="col-2 " id="nr">
+                NR</div>
+            <div class="col-4  bg-dark"></div>
+        </div>
+        <div class="row" style="height: 100px ;">
+            <div id="wr" class="col-4 ">
+                WR</div>
+                <div id="wr1" class="col-2 ">
+                    <button type="submit"  class="btn btn-warning" name="nl"  onclick="north()" >N</button></div>
+                   
+            <div id="el" class="col-2 ">
+                <button type="submit"  class="btn btn-warning" name="el"  onclick="east()">E</div>
+                    <div id="el1" class="col-4 ">
+                        EL</div>
+                    
+        </div>
+        <div class="row" style="height: 100px;">
+            <div id="wl"  class="col-4 ">Wl</div>
+            <div id="wl1"  class="col-2 ">
+                <button type="submit" class="btn btn-warning" name="wl" onclick="west()">W</button></div>
+                    <div id="er1" class="col-2 ">
+                        <button type="submit"  class="btn btn-warning" name="sl"  onclick="south()">S</button></div>
+            <div id="er" class="col-4 ">ER
+                </div>
+        </div>
+        <div class="row" style="height: 200px;">
+            <div class="col-4  bg-dark"></div>
+            <div id="sr" class="col-2 ">
+              SR</div>
+            <div id="sl" class="col-2 ">
+                SL</div>
+            <div class="col-4  bg-dark"></div>
+        </div>
+        <script>
+            function north(){
+               
+               document.getElementById("nr").style.backgroundColor="green";
+               document.getElementById("sl").style.backgroundColor="green";
+               document.getElementById("el").style.backgroundColor="green";
+               document.getElementById("wl").style.backgroundColor="green";
+               document.getElementById("er1").style.backgroundColor="green";
+               document.getElementById("wr1").style.backgroundColor="green";
+               document.getElementById("nl").style.backgroundColor="green";
+               document.getElementById("sr").style.backgroundColor="red";
+               document.getElementById("er").style.backgroundColor="red";
+               document.getElementById("wr").style.backgroundColor="red";
+               document.getElementById("wl1").style.backgroundColor="green";
+               document.getElementById("el1").style.backgroundColor="green";
+             }
+             function south(){
+               
+               document.getElementById("nr").style.backgroundColor="red";
+               document.getElementById("sl").style.backgroundColor="green";
+               document.getElementById("el").style.backgroundColor="green";
+               document.getElementById("wl").style.backgroundColor="green";
+               document.getElementById("er1").style.backgroundColor="green";
+               document.getElementById("wr1").style.backgroundColor="green";
+               document.getElementById("nl").style.backgroundColor="green";
+               document.getElementById("sr").style.backgroundColor="green";
+               document.getElementById("er").style.backgroundColor="red";
+               document.getElementById("wr").style.backgroundColor="red";
+               document.getElementById("wl1").style.backgroundColor="green";
+               document.getElementById("el1").style.backgroundColor="green";
+             }
+             function west(){
+               
+               document.getElementById("nr").style.backgroundColor="red";
+               document.getElementById("sl").style.backgroundColor="green";
+               document.getElementById("el").style.backgroundColor="green";
+               document.getElementById("wl").style.backgroundColor="green";
+               document.getElementById("er1").style.backgroundColor="green";
+               document.getElementById("wr1").style.backgroundColor="green";
+               document.getElementById("nl").style.backgroundColor="green";
+               document.getElementById("sr").style.backgroundColor="red";
+               document.getElementById("er").style.backgroundColor="red";
+               document.getElementById("wr").style.backgroundColor="green";
+               document.getElementById("wl1").style.backgroundColor="green";
+               document.getElementById("el1").style.backgroundColor="green";
+             }
+             function east(){
+               
+               document.getElementById("nr").style.backgroundColor="red";
+               document.getElementById("sl").style.backgroundColor="green";
+               document.getElementById("el").style.backgroundColor="green";
+               document.getElementById("wl").style.backgroundColor="green";
+               document.getElementById("er1").style.backgroundColor="green";
+               document.getElementById("wr1").style.backgroundColor="green";
+               document.getElementById("nl").style.backgroundColor="green";
+               document.getElementById("sr").style.backgroundColor="red";
+               document.getElementById("er").style.backgroundColor="green";
+               document.getElementById("wr").style.backgroundColor="red";
+               document.getElementById("wl1").style.backgroundColor="green";
+               document.getElementById("el1").style.backgroundColor="green";
+             }
+           
+        </script>
+       
+    </div>
+        <h1 style="text-align: center;">JS TASK 4</h1>
+
+        <div class="row">
+            <div class="col"><label>Parking Allotment</label></div>
+            <style> 
+                #first {
+                  
+                  background-color: gray;
+                  border-style: solid;
+                  
+                }
+                #second {
+                  
+                  background-color: gray;
+                  border-style: solid;
+                }
+                #third {
+                  
+                  background-color: gray;
+                  border-style: solid;
+                }
+                #fourth {
+                  
+                  background-color: gray;
+                  border-style: solid;
+                }
+            </style>
+        </head>
+        <body>
+            <div class="container">
+            <div class="row p-5" style="height: 200px;">
+                <div class="col-3 "  id="first">S1<span id="s1msg"></span></div>
+                <div class=" col-3 " id="second">
+                    S2<span id="s2msg"></span></div>
+                <div class="col-3 "  id="third">
+                    S3<span id="s3msg"></span></div>
+                <div class="col-3 " id="fourth" >S4<span id="s4msg"></span></div>
+            </div>
+            <div class="row py-5">
+                <div class="col"><select  class="form-select" name="book" id="booked">
+                    <option >S1</option>
+                    <option >S2</option>
+                    <option >S3</option>
+                    <option >S4</option>
+                </select> </div>
+                <div class="col"><select class="form-select" name="release" id="released">
+                    <option >S1</option>
+                    <option >S2</option>
+                    <option >S3</option>
+                    <option >S4</option>
+                </select> </div>
+                <div class="col"><input type="text" class="form-control" id="vnumber"name="vnumber" placeholder="vehicle number"></div>
+            </div>
+            <div class="row py-2">
+                <div class="col"><button type="button" class="btn btn-primary"  onclick="booking()">BOOK</button></div>
+                <div class="col"><button class="btn btn-primary" type="button" onclick="releasing()">RELEASE</button></div>
+            </div>
+            <script>
+              
+               function booking(){
+                let booker=document.getElementById('booked').value;
+                let no=document.getElementById('vnumber').value;
+                let bookmsg1="";
+                let bookmsg2="";
+                let bookmsg3="";
+                let bookmsg4="";
+                if(booker=="S1"){
+                    bookmsg1="Vehicle no "+no;
+                    document.getElementById("first").style.backgroundColor="green";
+                   
+                }
+                else  if(booker=='S2'){
+                    bookmsg2="Vehicle no "+no;
+                    document.getElementById("second").style.backgroundColor="green";
+                }
+                else  if(booker=='S3'){
+                    bookmsg3="Vehicle no "+no;
+                    document.getElementById("third").style.backgroundColor="green";
+                }
+                else if(booker=='S4'){
+                    bookmsg4="Vehicle no "+no;
+                    document.getElementById("fourth").style.backgroundColor="green";
+                }
+                document.getElementById('s1msg').innerHTML=bookmsg1;
+                document.getElementById('s2msg').innerHTML=bookmsg2;
+                document.getElementById('s3msg').innerHTML=bookmsg3;
+                document.getElementById('s4msg').innerHTML=bookmsg4;
+               }
+               
+               
+               function releasing(){
+                let rel=document.getElementById('released').value;
+                let nom=document.getElementById('vnumber').value;
+                let bookmsg5="";
+                let bookmsg6="";
+                let bookmsg7="";
+                let bookmsg8="";
+                if(rel=="S1"){
+                    
+                    document.getElementById("first").style.backgroundColor="gray";
+                   
+                }
+                else  if(rel=='S2'){
+                    
+                    document.getElementById("second").style.backgroundColor="gray";
+                }
+                else  if(rel=='S3'){
+                   
+                    document.getElementById("third").style.backgroundColor="gray";
+                }
+                else if(rel=='S4'){
+                   
+                    document.getElementById("fourth").style.backgroundColor="gray";
+                }
+                document.getElementById('s1msg').innerHTML=bookmsg5;
+                document.getElementById('s2msg').innerHTML=bookmsg6;
+                document.getElementById('s3msg').innerHTML=bookmsg7;
+                document.getElementById('s4msg').innerHTML=bookmsg8;
+               }
+               
+               
+            </script>
+           
+        </div>
+  
+        </div>
+        
     </div>                      
 </body>
 </html>
