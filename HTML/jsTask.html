@@ -8,7 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
 
 </head>
-<body onload="showMsg()">
+<body>
     <div class="container">
         <h1 style="text-align: center;">JS TASK 1</h1>
         <div class="row">
@@ -609,9 +609,89 @@
             </script>
            
         </div>
-  
-        </div>
-        
+        <h1 style="text-align: center;">JS TASK 5</h1>
+        <div class="row">
+            <h2>Task 1</h2>
+            <div class="row m-4">
+                <div class="col"><label>Reverse Number Check</label></div>
+                <div class="col"><input id="numberinput" placeholder="Enter any Number:"></div>
+                    <div class="col"><button onclick="reverseNumber()">Reverse Number</button></br></br></div>
+                <div class="col"><span id="reversenumberCalcMsg"></span></div>
+            </div>         
+            <script>
+                function reverseNumber()
+                {
+                var reversenum1,reversenum,reversenum2,reversenumresult=0;
+                reversenumbermsg="";
+                reversenum=Number(document.getElementById("numberinput").value);
+                reversenum2=reversenum;
+                while(reversenum>0)
+                {
+                reversenum1=reversenum%10;
+                reversenum=parseInt(reversenum/10);
+                reversenumresult=reversenumresult*10+reversenum1;
+                }
+                reversenumbermsg=(reversenumresult);
+                document.getElementById('reversenumberCalcMsg').innerHTML = reversenumbermsg;
+                }
+                </script>
+        </div>  
+        <div class="row">
+            <h2>Task 2</h2>
+            <div class="row m-4">
+                <div class="col"><label>Print Sum Of Digits</label></div>
+                <div class="col"><input id="number" placeholder="Enter any Number:"></div>
+                <div class="col"><button onClick= "sumOfDigits()">Sum of digits</button></div>
+                <div class="col"><input id="sum"></div>
+            </div>         
+            <script>
+                function sumOfDigits()
+                {
+                var n, remainder, sum = 0;
+                n = parseInt(document.getElementById("number").value);
+                while(n)
+                {
+                remainder = n % 10;
+                sum = sum + remainder;
+                n = Math.floor(n/10);
+                }
+                    document.getElementById("sum").value = sum;
+                }
+            </script>  
+        </div>    
+        <div class="row">
+            <h2>Task 3</h2>
+            <div class="row m-4">
+                <div><label><b>ChatBot</b></label></div>
+                <div class="row"><p>Hi,How May I Help You?</p></div>
+                <div class="row">
+                    <div class="col">1.Balance</div>
+                    <div class="col">2.Recharge</div>
+                </div>
+                <div class="row"><input type="number" class="form-control" id="optionnumber" name="optionnumber" placeholder="Enter Your Choice" onkeyup="botResult()"></div>
+                <div class="row"><span id="optionMsg"></span></div>
+            </div>         
+            <script>
+                function botResult()
+                {
+                    let option = Number(document.getElementById('optionnumber').value);
+                    let optionnumbermsg = "";
+                    if (option == 1){
+                        optionnumbermsg = "Your Balance is Rs.399.";
+                    }
+                    else if(option == 2){
+                        optionnumbermsg = "Your Mobile Recharge Balance is Rs.599.";
+                    }
+                    else{
+                        optionnumbermsg = "Entered Option Is Invalid.";
+                    }
+                document.getElementById('optionMsg').innerHTML = optionnumbermsg;
+                }
+            </script>  
+        </div>    
     </div>                      
 </body>
 </html>
+
+
+
