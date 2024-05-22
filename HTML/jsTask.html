@@ -649,13 +649,23 @@
                 {
                 var n, remainder, sum = 0;
                 n = parseInt(document.getElementById("number").value);
-                while(n)
-                {
-                remainder = n % 10;
-                sum = sum + remainder;
-                n = Math.floor(n/10);
-                }
+                   sum = getDigitsSum(n);
                     document.getElementById("sum").value = sum;
+                }
+                function getDigitsSum(n){
+                    let sum =0;
+                    while(n)
+                    {
+                    remainder = n % 10;
+                    sum = sum + remainder;
+                    n = Math.floor(n/10);
+                    console.log(n, sum);
+                    }
+                    if(sum >9){
+                        console.log("Inside" + sum);
+                        sum = getDigitsSum(sum);
+                    }    
+                    return sum;
                 }
             </script>  
         </div>    
