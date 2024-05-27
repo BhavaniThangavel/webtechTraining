@@ -972,6 +972,115 @@
    }
 </script> 
 </div>
+<h1 style="text-align: center;">JS TASK 7</h1>
+<div class="row">
+    <h2>Task 3</h2>
+    <div class="row">
+        <div class="col"><label>Print Palindrome Number</label></div>
+		<div class="col"><input type="text" name="n" id = "N" class="form-control"/></div>
+		<div class="col"><button type="button" class="btn btn-primary" onClick="Palindrome()">Check Palindrome Number</button>        
+        <div class="col"><span id="palindromenumCalcMsg"></span></div>
+
+    </div>     
+    <script>
+        function Palindrome()
+        {
+            var rem, temp, final = 0;
+            var number = Number(document.getElementById("N").value);
+            var palindromenumMsg = "";
+
+            temp = number;
+            while(number>0)
+            {
+                rem = number%10;
+                number = parseInt(number/10);
+                final = final*10+rem;
+            }
+            if(final==temp)
+            {
+                palindromenumMsg = "The given number is Palindrome";
+            }
+            else
+            {
+                palindromenumMsg = "The given number is not palindrome";
+            }
+            document.getElementById("palindromenumCalcMsg").innerHTML = palindromenumMsg;
+
+        }
+    </script>    
+</div>
+<div class="row">
+    <h2>Task 4</h2>
+    <div class="row">
+        <div class="col"><label>Print Armstrong Number</label></div>
+		<div class="col"><input type="text" name="armstrong" id = "armstrong" class="form-control"/></div>
+		<div class="col"><button type="button" class="btn btn-primary" onClick="Armstrong()">Check Armstrong Number</button>        
+        <div class="col"><span id="armstrongnumCalcMsg"></span></div>
+    </div>     
+    <script>
+        function Armstrong()
+        {
+            var flag,number,remainder,addition = 0;
+            armstrongnumber = Number(document.getElementById("armstrong").value);
+            var armstrongnumMsg = "";
+
+
+            flag = armstrongnumber;
+            while(armstrongnumber > 0)
+            {
+                remainder = armstrongnumber%10;
+                addition = addition + remainder*remainder*remainder;
+                armstrongnumber = parseInt(armstrongnumber/10);
+            }
+
+            if(addition == flag)
+            {
+                armstrongnumMsg = "The given number is Armstrong Number";
+            }
+            else
+            {
+                armstrongnumMsg = "The given number is not Armstrong Number";
+            }
+            document.getElementById("armstrongnumCalcMsg").innerHTML = armstrongnumMsg;
+        }
+    </script>
+</div>
+<div class="row">
+    <h2>Task 5</h2>
+    <div class="row">
+        <div class="col"><label>Print Prime Number Or Not</label></div>
+		<div class="col"><input type="text" name="prime" id = "prime" class="form-control"/></div>
+		<div class="col"><button type="button" class="btn btn-primary" onClick="Prime()">Check Prime Number</button>        
+        <div class="col"><span id="primenumCalcMsg"></span></div>
+    </div>     
+    <script>
+        function Prime()
+        {
+            var i,flag=0,primenumber;
+				primenumber = Number(document.getElementById("prime").value);
+                var primenumMsg = "";
+
+				for(i=2; i <= primenumber/2; i++)
+				{
+					if(primenumber%i == 0)
+					{
+						flag = 1;
+						break;
+					}
+				}
+				if(flag == 0)
+				{
+					primenumMsg = "The given number is Prime Number";
+				}
+				else
+				{
+					primenumMsg = "The given number is not Prime Number";
+				}
+            document.getElementById("primenumCalcMsg").innerHTML = primenumMsg;
+        }
+    </script>
+</div>
+
     </div>                      
 </body>
 </html>
