@@ -831,10 +831,9 @@
                 function rangeOfDigits(){
                     var rangen1 = document.getElementById('range1').value;
                     var rangen2 = document.getElementById('range2').value;
-                    var r = "11";
                     var output = "";
-                    for (var i = rangen1; i < r; i++) {
-                        output =  i + " + " + rangen1 + " = " + i + rangen1 + "<br/>";
+                    for (var i = rangen1; i <= rangen2; i++) {
+                        output = output + " " + i;
                     }
                     document.getElementById("rangenumCalcMsg").innerHTML = output;
                 }  
@@ -879,100 +878,103 @@
             </script>  
         </div>  
         <div class="row">
-            <h2>Task 4</h2>
-            <style>
-                .container {
-                    text-align: center;
-                }
-         
-                .inCont {
-                    display: inline-block;
-                    text-align: start;
-                    padding: 15px;
-                }
-            </style>
-
-<div class="container">
-    <h2>Display Sum Range</h2>
-    <form id="myForm">
-        <div class="inCont">
-            <label for="minNum">
-                Minimum Number:
-            </label><br />
-            <input type="number" id="minNum">
-        </div>
-
-        <div class="inCont">
-            <label for="maxNum">
-                Maximum Number:
-            </label><br />
-            <input type="number" id="maxNum">
-        </div><br /><br />
-        <input type="submit" value="Find Sum">
-    </form>
-    <p id="sresult"></p>
-<script>
-    const myForm = 
-        document.getElementById('myForm');
-
-    myForm.addEventListener('submit', function (e) {
-        e.preventDefault();
-        let sum = 0;
-        const result = 
-            document.getElementById('sresult');
-        const minNum = 
-            document.getElementById('minNum').value;
-        const maxNum = 
-            document.getElementById('maxNum').value;
-        const numberMin = Number(minNum);
-        const numberMax = Number(maxNum);
-        if (minNum === "" || maxNum === "") {
-            result.innerHTML = `
-            <b>
-                Input fields can not be empty!!
-            </b>`;
-        }
-        else if (numberMin > numberMax) {
-            result.innerHTML = `
-            <b>
-                Minimum number must be less than 
-                Maximum number!!
-            </b>`;
-        }
-        else {
-            for (let i = numberMin + 1; i < numberMax; i++) {
-                sum += i;
-            }
-            result.innerHTML = `
-            <b style='color: green'>
-                Sum of numbers between ${numberMin} 
-                and ${numberMax} is: ${sum}
-            </b>`;
-        }
-    })
-        </script>  
-        </div> 
-<div class="row">
+                <h2>Task 1</h2>
+                <div class="row m-4">
+                    <div class="col"><label>Print Sum Of Range Of Numbers</label></div>
+                    <div class="col"><input id="rangenum1" type="number" class="form-control"/></div>
+                    <div class="col"><input id="rangenum2" type="number" class="form-control"/></div>
+                    <div class="col"><button onClick= "sumrangeOfDigits()">Get Sum Of Range</button></div>
+                    <div class="col"><span id="sumrangenumCalcMsg"></span></div>
+                </div>         
+                <script>
+                    function sumrangeOfDigits(){
+                        var sumrangen1 = Number(document.getElementById("rangenum1").value);
+                        var sumrangen2 = Number(document.getElementById("rangenum2").value);
+                        var sumoutput = "";
+                        for (var i = sumrangen1; i <= sumrangen2; i++) {
+                            sumoutput = Number(sumoutput + i);
+                        }
+                        document.getElementById("sumrangenumCalcMsg").innerHTML = sumoutput;
+                    }  
+                </script>  
+            </div>  
+            
+        <div class="row">
                 <h2>Task 4</h2>
-
-        <div class="col"><label>Average Of Numbers</label></div>
-                <div class="col"><input id="firstnum" type="number" class="form-control"/></div>
-                <div class="col"><input id="secondnum" type="number" class="form-control"/></div>
-                <div class="col"><input id="thirdnum" type="number" class="form-control"/></div>
-                <div class="col"><button onClick= "avgOfDigits()">Get Average</button></div>
-                <div class="col"><span id="avgnumCalcMsg"></span></div>
-    <script>   
-        function avgOfDigits(){
-                let firstNumber=Number(document.getElementById("firstnum").value);
-                let secondNumber=Number(document.getElementById('secondnum').value);
-                let thirdNumber=Number(document.getElementById('thirdnum').value);
-                let averagemsg= "";
-                averagemsg = (firstNumber + secondNumber + thirdNumber) / 3;
-                document.getElementById("avgnumCalcMsg").innerHTML = averagemsg;
-   }
+                <div class="col"><label>Average Of Numbers</label></div>
+        <div class="col"><input id="avgnum1" type="number" class="form-control"/></div>
+        <div class="col"><input id="avgnum2" type="number" class="form-control"/></div>
+        <div class="col"><button onClick= "avgrangeOfDigits()">Get Avg Of Range</button></div>
+        <div class="col"><span id="avgrangenumCalcMsg"></span></div>
+    </div>         
+    <script>
+        function avgrangeOfDigits(){
+            var avgrangen1 = Number(document.getElementById("avgnum1").value);
+            var avgrangen2 = Number(document.getElementById("avgnum2").value);
+            var counter = 0;
+            var avgoutput = 0;
+            let sumVal = 0;
+            for (let i = avgrangen1; i <= avgrangen2; i++) {
+                counter++;
+                console.log(counter);
+                sumVal += i;
+                avgoutput = (Number(sumVal) / counter) ;
+            }
+            document.getElementById("avgrangenumCalcMsg").innerHTML = avgoutput;
+        }  
 </script> 
 </div>
 <h1 style="text-align: center;">JS TASK 7</h1>
+<div class="row">
+    <h2>Task 1</h2>
+            <div class="row m-4">
+                <div class="col"><label>Print Even Number In A Range</label></div>
+                <div class="col"><input id="evenrange1" type="number" class="form-control"/></div>
+                <div class="col"><input id="evenrange2" type="number" class="form-control"/></div>
+                <div class="col"><button onClick= "evenrangeOfDigits()">Get Even Digits Range</button></div>
+                <div class="col"><span id="evenrangenumCalcMsg"></span></div>
+                
+            </div>         
+            <script>
+                function evenrangeOfDigits(){
+                    var evenrangenum1 = document.getElementById('evenrange1').value;
+                    var evenrangenum2 = document.getElementById('evenrange2').value;
+                    var evenoutput = "";
+                    for (var i = evenrangenum1; i <= evenrangenum2; i++) {
+                        if (i % 2 == 0){
+                        evenoutput = evenoutput + " " + i;
+                        }
+                    }
+                    document.getElementById("evenrangenumCalcMsg").innerHTML = evenoutput;
+                }  
+            </script>  
+            </div>
+             <div class="row">
+            <h2>Task 2</h2>
+            <div class="row m-4">
+                <div class="col"><label>Reverse Number Check</label></div>
+                <div class="col"><input id="numinput" placeholder="Enter any Number:"></div>
+                    <div class="col"><button onclick="reverseNumbercheck()">Reverse Number</button></br></br></div>
+                <div class="col"><span id="reversenumCalcMsg"></span></div>
+            </div>         
+            <script>
+                function reverseNumbercheck()
+                {
+                var revnum1,revnum,revnum2,revnumresult=0;
+                revnumbermsg="";
+                revnum=Number(document.getElementById("numinput").value);
+                revnum2=revnum;
+                while(revnum>0)
+                {
+                revnum1=revnum%10;
+                revnum=parseInt(revnum/10);
+                revnumresult=revnumresult*10+revnum1;
+                }
+                revnumbermsg=(revnumresult);
+                document.getElementById('reversenumCalcMsg').innerHTML = revnumbermsg;
+                }
+                </script>
+        </div>  
 <div class="row">
     <h2>Task 3</h2>
     <div class="row">
@@ -1081,7 +1083,166 @@
     </script>
 </div>
 
-    </div>                      
+    </div> 
+    <div class="row">
+        <h2>Task 6</h2>
+                <div class="row m-4">
+                    <div class="col"><label>Print Even And Odd Number In A Range</label></div>
+                    <div class="col"><input id="even1" type="number" class="form-control"/></div>
+                    <div class="col"><input id="even2" type="number" class="form-control"/></div>
+                    <div class="col"><button onClick= "evenDigits()">Get Even Digits Range</button></div>
+                    <div class="col"><button onClick= "oddDigits()">Get Odd Digits Range</button></div>
+                    <div class="col"><span id="evennumCalcMsg"></span></div>
+                    <div class="col"><span id="oddnumCalcMsg"></span></div>
+
+                    
+                </div>         
+                <script>
+                    function evenDigits(){
+                        var evenn1 = document.getElementById('even1').value;
+                        var evenn2 = document.getElementById('even2').value;
+                        var evenop = "";
+                        for (var i = evenn1; i <= evenn2; i++) {
+                            if (i % 2 == 0){
+                                evenop = evenop + " " + i;
+                            }
+                        }
+                        document.getElementById("evennumCalcMsg").innerHTML = evenop;
+                    }  
+                    function oddDigits(){
+                        var evenn1 = document.getElementById('even1').value;
+                        var evenn2 = document.getElementById('even2').value;
+                        var oddop = "";
+                        for (var j = evenn1; j <= evenn2; j++) {
+                            if (j % 2 != 0){
+                                oddop = oddop + " " + j;
+                            }
+                        }
+                        document.getElementById("oddnumCalcMsg").innerHTML = oddop;
+                    }  
+                </script>  
+                </div> 
+                <div class="row">
+                    <h2>Task 7</h2>
+                            <div class="row m-4">
+                                <div class="col"><label>Print Odd Number In A Range</label></div>
+                                <div class="col"><input id="odd1" type="number" class="form-control"/></div>
+                                <div class="col"><input id="odd2" type="number" class="form-control"/></div>
+                                <div class="col"><button onClick= "OddOfDigits()">Get Odd Digits Range</button></div>
+                                <div class="col"><span id="oddvalCalcMsg"></span></div>
+                                
+                            </div>         
+                            <script>
+                                function OddOfDigits(){
+                                    var oddvalue1 = document.getElementById('odd1').value;
+                                    var oddvalue2 = document.getElementById('odd2').value;
+                                    var oddVal = "";
+                                    for (var i = oddvalue1; i <= oddvalue2; i++) {
+                                        if (i % 2 != 0){
+                                            oddVal = oddVal + " " + i;
+                                        }
+                                    }
+                                    document.getElementById("oddvalCalcMsg").innerHTML = oddVal;
+                                }  
+                            </script>  
+                            </div> 
+                            <div class="row">
+                                <h2>Task 8</h2>
+                                <div class="row m-4">
+                                    <div class="col"><label>Print Range Of Numbers by skipping 5 ending digits</label></div>
+                                    <div class="col"><input id="r1" type="number" class="form-control"/></div>
+                                    <div class="col"><input id="r2" type="number" class="form-control"/></div>
+                                    <div class="col"><button onClick= "rangevalDigits()">Get Digits Range</button></div>
+                                    <div class="col"><span id="rvalCalcMsg"></span></div>
+                                </div>         
+                                <script>
+                                    function rangevalDigits(){
+                                        var rval1 = document.getElementById('r1').value;
+                                        var rval2 = document.getElementById('r2').value;
+                                        var valres = "";
+                                        for (var i = rval1; i <= rval2; i++) {
+                                            if(i % 10 != 5){
+                                            valres = valres + " " + i;
+                                        }
+                                            }
+                                        document.getElementById("rvalCalcMsg").innerHTML = valres;
+                                    }  
+                                </script>  
+                            </div> 
+                            <h1 style="text-align: center;">JS TASK 8</h1><div class="row">
+                                <h2>Task 1</h2>
+                                        <div class="row m-4">
+                                            <div class="col"><label>Print Odd Number In Descending Order</label></div>
+                                            <div class="col"><input id="o1" type="number" class="form-control"/></div>
+                                            <div class="col"><input id="o2" type="number" class="form-control"/></div>
+                                            <div class="col"><button onClick= "OddDescDigits()">Get Odd Digits Range</button></div>
+                                            <div class="col"><span id="odddescCalcMsg"></span></div>
+                                            
+                                        </div>         
+                                        <script>
+                                            function OddDescDigits(){
+                                                var oddvaldesc1 = document.getElementById('o1').value;
+                                                var oddvaldesc2 = document.getElementById('o2').value;
+                                                var oddValdesc = "";
+                                                for (var i = oddvaldesc2; i > oddvaldesc1; i--) {
+                                                    if (i % 2 != 0){
+                                                        oddValdesc = oddValdesc + " " + i;
+                                                    }
+                                                }
+                                                document.getElementById("odddescCalcMsg").innerHTML = oddValdesc;
+                                            }  
+                                        </script>  
+                                        </div>
+                                        <div class="row">
+                                            <h2>Task 8</h2>
+                                            <div class="row m-4">
+                                                <div class="col"><label>Print Mid Range Of Numbers</label></div>
+                                                <div class="col"><input id="midr1" type="number" class="form-control"/></div>
+                                                <div class="col"><input id="midr2" type="number" class="form-control"/></div>
+                                                <div class="col"><button onClick= "midrangevalDigits()">Get Digits Mid Range</button></div>
+                                                <div class="col"><span id="midrvalCalcMsg"></span></div>
+                                            </div>         
+                                            <script>
+                                                function midrangevalDigits(){
+                                                    var midrval1 = document.getElementById('midr1').value;
+                                                    var midrval2 = document.getElementById('midr2').value;
+                                                    var midvalres = "";
+                                                    for (var i = midrval2/2; i <= midrval2; i++) {
+                                                        midvalres = midvalres + " " + i;
+                                                    }
+                                                       
+                                                    document.getElementById("midrvalCalcMsg").innerHTML = midvalres;
+                                                }  
+                                            </script>  
+                                        </div>  
+                                        <h1 style="text-align: center;">JS TASK 9 Patterns</h1><div class="row">
+                                            <h2>Task 1</h2>
+                                                    <div class="row m-4">
+                                                        <div class="col"><label>Print Odd Number In Descending Order</label></div>
+                                                        <div class="col"><input id="o1" type="number" class="form-control"/></div>
+                                                        <div class="col"><input id="o2" type="number" class="form-control"/></div>
+                                                        <div class="col"><button onClick= "OddDescDigits()">Get Odd Digits Range</button></div>
+                                                        <div class="col"><span id="odddescCalcMsg"></span></div>
+                                                        
+                                                    </div>         
+                                                    <script>
+                                                        function OddDescDigits(){
+                                                            var oddvaldesc1 = document.getElementById('o1').value;
+                                                            var oddvaldesc2 = document.getElementById('o2').value;
+                                                            var oddValdesc = "";
+                                                            for (var i = oddvaldesc2; i > oddvaldesc1; i--) {
+                                                                if (i % 2 != 0){
+                                                                    oddValdesc = oddValdesc + " " + i;
+                                                                }
+                                                            }
+                                                            document.getElementById("odddescCalcMsg").innerHTML = oddValdesc;
+                                                        }  
+                                                    </script>  
+                                                    </div>
+
+
+          
+                </div>        
 </body>
 </html>
 

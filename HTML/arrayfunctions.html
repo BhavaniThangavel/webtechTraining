@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Task</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">ARRAY FUNCTIONS TASK</h1>
+        <div class="row">
+            <h2>Push Function</h2>
+            <div class="row m-4">
+                <div class="col"><p id="push_data"></p></div>
+                <div class="col"><button onclick="pushLogic()"> Click Here </button></div>
+                <div class="col"><p id="added_data"></p></div>       
+                <div class="col"><span id="primenumCalcMsg"></span></div>
+                <script> 
+                    var arr = ["1", "2", "3", "4"]; 
+                    var up = document.getElementById("push_data"); 
+                    up.innerHTML = "Array = [" + arr + "]"; 
+                    var element = "5"; 
+                    var down = document.getElementById("added_data"); 
+                    function pushLogic() { 
+                    arr = [arr, element]; 
+                    down.innerHTML = arr; 
+                                } 
+                </script> 
+        </div>
+    </div> 
+    <div class="row">
+        <h2>Pop Function</h2>
+        <div class="row m-4">
+            <div class="col"><p id="push_data"></p></div>
+            <div class="col"><button onclick="pushLogic()"> Click Here </button></div>
+            <div class="col"><p id="added_data"></p></div>       
+            <div class="col"><span id="primenumCalcMsg"></span></div>
+            <script> 
+                var arr = ["1", "2", "3", "4"]; 
+                var up = document.getElementById("push_data"); 
+                up.innerHTML = "Array = [" + arr + "]"; 
+                var element = "5"; 
+                var down = document.getElementById("added_data"); 
+                function pushLogic() { 
+                arr = [arr, element]; 
+                down.innerHTML = arr; 
+                            } 
+            </script> 
+    </div>
+</div> 
+<script>
+function Numeric_sort(ar) {
+    let i = 0, j;
+    while (i < ar.length) {
+        j = i + 1;
+        while (j < ar.length) {
+
+            if (ar[j] < ar[i]) {
+                let temp = ar[i];
+                ar[i] = ar[j];
+                ar[j] = temp;
+            }
+            j++;
+        }
+        i++;
+    }
+}
+
+// Original Array
+let arr = [1, 15, 10, 45, 27, 100];
+
+// Print Before sorting array 
+console.log("Original Array");
+console.log(arr);
+
+// Function call 
+Numeric_sort(arr);
+
+console.log("Sorted Array");
+
+// Print sorted Numeric array 
+console.log(arr); 
+</script>
+<script>
+    let str1 = 'Geeks';
+let str2 = 'for';
+let str3 = 'Geeks';
+
+// Joining the strings together
+let str = str1 + str2 + str3;
+
+console.log(str);
+</script>
+<script>
+    let originalArr = ["c", "cpp", "java", "python", "javascript", "kotlin"];
+
+let start = 1;
+let howMany = 3;
+
+let extractedArr = originalArr.reduce((acc, item, index) => {
+    if (index >= start && index < start + howMany) {
+        acc.push(item);
+    }
+    return acc;
+}, []);
+
+// Printing the Extracted array
+console.log("Extracted Array");
+console.log(extractedArr);
+
+// Printing the original Array
+console.log("Original Array");
+console.log(originalArr);
+</script>
+<script>
+    
+</script>
+    </div>                     
+</body>
+</html>
+
+
+

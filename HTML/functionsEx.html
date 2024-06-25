@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=,initial-scale="1.0">
+    <title>This is a demo page</title>
+</head>
+<body>
+   <div>
+    <h2>Functions</h2>
+    <p id="counter"></p>
+
+    <script>
+        function namedFunction(msg){
+           console.log("Printing:" + msg);            
+        }
+        namedFunction("calling main function");
+        let arrowFunc = () =>{console.log("arrow Function")};
+        arrowFunc();
+        let arr = [1,2,3,4];
+        console.log(arr);
+        console.log(arr.filter((ele)=>{return (ele%2)==0;}));
+        console.log(arr.map((ele)=>{return ele*2;}));
+        console.log(arr.forEach((ele)=>{console.log(ele*2);}));
+        // forofloop
+        for(let ele of arr){
+            console.log(ele);
+        }
+        // normal fpor loop
+        for(let idx=0;idx<arr.length;idx++){
+            console.log(arr[idx]);
+        }
+        console.log(arr.some((ele)=>{return (ele%2)==0;}));
+        console.log(arr.every((ele)=>{return (ele%2)==0;}));
+
+
+        function outerFunction(){
+            function innerFunction(){
+                console.log("Inner Function");
+            }
+            console.log("Outer Function");
+            innerFunction();
+        }
+        outerFunction();
+        function closureFunc(amt){
+            amt++;
+            function printAmt(){
+            console.log(amt);
+        }
+        return printAmt;
+        }
+        let printAmtFunc = closureFunc(10);
+        printAmtFunc();
+
+        
+         function callBackFun(){
+             console.log("Callback");
+         }
+         function callBackBaseFun(){
+            setTimeout(()=>{
+                console.log("Waited for 2 seconds");
+                callBackFun();
+                }, 2000);   
+        }
+        callBackBaseFun(callBackFun);
+        function recursiveFunc(num){
+            num++;
+            console.log(num);
+            if(num!=10){
+                recursiveFunc(num);
+            }
+        }
+        recursiveFunc(1);
+        function printCounter(){
+            let sec = 0;
+            let mins = 0;
+            setInterval(()=>{
+                sec++;
+                if(sec == 60){
+                    mins++;
+                    sec=0;
+                }
+                document.getElementById('counter');},1000);  
+        }
+        printCounter();
+    </script>
+   </div>
+</body>
+</html>
+
+
+
+

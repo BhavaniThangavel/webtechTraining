@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js String</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div>
+        <h2>String</h2>
+        <p id="strMsg"></p>
+        <script>
+            strEx();
+            function strEx(){
+                let strMsg = "";
+                let str = " Hai Hello, How are you buddies? " ;
+                strMsg += "String : " + str + "<br>";
+                strMsg += "String length : " + str.length + "<br>";
+                strMsg += "String Index Of 1 : " + str.indexOf('l') + "<br>";
+                strMsg += "String Last Index Of 1 : " + str.lastIndexOf('l') + "<br>";
+                strMsg += "String Includes How : " + str.includes('how') + "<br>";
+                strMsg += "String Includes Why : " + str.includes('why') + "<br>";
+
+                strMsg += "String replace buddies : " + str.replace('buddies','folks') + "<br>";
+                strMsg += "String : " + str + "<br>";
+                strMsg += "String Starts with Hai : " + str.startsWith(' Hai') + "<br>";
+                strMsg += "String endswith ? : " + str.endsWith('?') + "<br>";
+                strMsg += "String substring 10,18 : " + str.substring(10,18) + "<br>";
+                strMsg += "String slice 10,18 : " + str.slice(10,18) + "<br>";
+                strMsg += "String : " + str + "<br>";
+
+                strMsg += "String to lowercase : " + str.toLowerCase() + "<br>";
+                strMsg += "String to upper case : " + str.toUpperCase() + "<br>";
+                strMsg += "String repeat of 3 : " + str.repeat(3) + "<br>";
+                strMsg += "String char at 6 : " + str.charAt(6) + "<br>";
+                strMsg += "String cocat welcome : " + str.concat('welcome') + "<br>";
+                strMsg += "String split by space  : " + str.split(' ') + "<br>";
+                console.log(str.split(' '));
+                strMsg += "String trim : " + str.trim() + "<br>";
+                console.log(str);
+                console.log(str.trim());
+                strMsg += "String : " + str + "<br>";
+
+
+                document.getElementById('strMsg').innerHTML = strMsg;
+            }
+        </script>
+        
+    </div>                     
+</body>
+</html>
+
+
+

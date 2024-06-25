@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Js Task</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div class="container">
+        <h1 style="text-align: center;">JS TASK STRING FUNCTIONS</h1>
+        <div class="row">
+            <h2>Task 1</h2>
+            <div class="row m-4">
+                <div class="col"><label>StartsWith Function</label></div>
+                <div class="col"><input type="text" id="startswith" name="startswith" class="form-control"/></div>
+                <div class="col"><input type="text" id="startswithcheck" name="startswithcheck" class="form-control"/></div>
+                <div class="col"><button onClick= "startsWith()">Get Output</button></div>
+                <div class="col"><span id="startsWithMsg"></span></div>
+            </div>         
+            <script>
+            function startsWith(){
+                    let startstext = document.getElementById('startswith').value;
+                    let checkstart = document.getElementById('startswithcheck').value;
+                    let startstextmsg = "";
+                    for (let i = 0; i < startstext.length; i++) {
+                        let strnew=startstext[i];
+                        for (let j = 0; j < checkstart.length; j++) {
+                            let strnew1=checkstart[j];
+                        console.log("value",strnew1);
+                        if(strnew == strnew1){
+                                startstextmsg = true;    
+                        }
+                        else{
+                            startstextmsg = false;
+                        }
+                    }
+                    }
+                    document.getElementById('startsWithMsg').innerHTML = startstextmsg;
+                }
+
+
+                
+            </script>
+        </div>
+    </div>        
+</body>
+</html>
+
+
+

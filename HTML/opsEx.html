@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OOPS EXAMPLE</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+
+</head>
+<body>
+    <div>
+        <h2>OOPS Ex</h2>
+        <script>
+           class Person{
+            personName = '';
+            age = 0;
+            aadhar = 0;
+
+            setAadhar (aadhar){
+                this.aadhar = aadhar;
+            }
+            setPersonName(personName){
+                this.personName = personName;
+            }
+            setAge(age){
+                this.age = age;
+            }
+            displayPersonDetails(){
+                console.log(this.personName, this.age,this.aadhar);
+            }
+           }
+           let person = new Person();
+           person.setPersonName("Lala");
+           person.setAge(25);
+           person.setAadhar(1234567889);
+           person.displayPersonDetails();
+
+           class Student extends Person{
+            studentId = 0;
+            instituteName = '';
+            course = '';
+
+            // default constructor
+            registerStudent(studentId){
+                this.studentId = studentId;
+                console.log("student has been registered");
+            }
+            allocateCourse(course){
+                this.course = course;
+                console.log("course has been allocated");
+
+            }
+
+            displayStudentInfo(){
+                console.log(this.personName,this.age,this.aadhar,this.studentId,this.instituteName,this.course);
+            }
+
+            // Parameterized constructor
+            constructor(instituteName){
+               super();
+               this.instituteName = instituteName;
+            }
+
+           }
+           let student = new Student("Besant");
+           student.setPersonName("Arun");
+           student.setAge(30);
+           student.setAadhar(1234566788);
+           student.registerStudent(1234);
+           student.allocateCourse('FullStack');
+           student.displayStudentInfo();
+            
+           class Candidate extends Student{
+            candidateId = 0;
+            companyName = '';
+
+            scheduleInterview(){
+                console.log("Interview Scheduled for " + this.candidateId + " in " + this.companyName);
+            }
+            constructor(candidateId,companyName,instituteName){
+                super(instituteName);
+                this.candidateId = candidateId;
+                this.companyName = companyName;
+
+            }
+
+            interviewResult(result){
+                try{
+                if(!result){
+                    throw new Error("Interview Failed");
+                }
+            }catch(er){
+                console.log(er);
+                alert("Something went wrong");
+            }
+
+            }
+            // parameterized constructor as default will not throw any error just set value the desired value as undefined
+            // constructor(candidateId,companyName,instituteName){
+            //     super();
+            //     this.candidateId = candidateId;
+            //     this.companyName = companyName;
+
+            // }
+           }
+           let candidate = new Candidate(123, "Amazon" , "Besant");
+           candidate.setPersonName("Bhavani");
+           candidate.setAge(25);
+           candidate.setAadhar(987654321);
+           candidate.registerStudent(879);
+           candidate.allocateCourse('Frontend');
+           candidate.displayPersonDetails();
+           candidate.displayStudentInfo();
+           candidate.scheduleInterview();
+           candidate.interviewResult(false);
+
+           </script>
+        
+    </div>                     
+</body>
+</html>
+
+
+
