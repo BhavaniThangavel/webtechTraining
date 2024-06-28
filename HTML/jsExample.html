@@ -240,6 +240,53 @@
                 }
             </script>
         </div>
+        <div>
+            <h2>Set & Map</h2>
+            <script>
+                setEx();
+                function setEx(){
+                    let st = new Set();
+                    st.add("AA");
+                    st.add("ZZ");
+                    st.add("XX");
+                    st.add("BBB");
+                    st.add("ZZ");
+                    console.log(st);
+                    console.log(st.has("XX"));
+                    console.log(st.delete("BBB"));
+                    console.log(st.has("BBB"));
+                    console.log(st.delete("BBB"));
+                    console.log(st);
+                    st.forEach(data=> console.log(data));
+                    console.log(st.entries());
+                    console.log(st.clear());
+                    console.log(st);
+                }
+                mapEx();
+                function mapEx(){
+
+                    let mp = new Map();
+                    mp.set(1,"AAA");
+                    mp.set(2,"CCC");
+                    mp.set(3,"CCC");
+                    mp.set(4,"GG");
+                    console.log(mp);
+                    console.log(mp.has(2));
+                    console.log(mp.has(10));
+                    console.log(mp.delete(3));
+                    console.log(mp);
+                    console.log(mp.get(4));
+                    mp.set(4, "YYY");
+                    console.log(mp.get(4));
+                    console.log(mp.keys());
+                    console.log(mp.values());
+                    console.log(mp.size);
+                    mp.clear();
+                    console.log(mp);
+
+                }
+            </script>
+        </div>
     </div>
 
 </body>
