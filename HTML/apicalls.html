@@ -26,7 +26,8 @@
             <div class="col"><input type="text" id="pPrice" name="pPrice" class="form-control" onkeyup="generateTotal()"/></div>
             <div class="col"><input type="text" id="pQnty" name="pQnty" class="form-control" onkeyup="generateTotal()"/></div>
             <div class="col"><input type="text" id="pTotal" name="pTotal" class="form-control" disabled/></div>
-            <div class="col"><button type="button" class="btn btn-success" onclick="addProduct()">Add Product</button></div>
+            <div class="col" id="addBtn"><button type="button" class="btn btn-success" onclick="addProduct()">Add Product</button></div>
+            <div class="col" id="updateBtn"><button type="button" class="btn btn-success" onclick="saveExistingProduct()">Update Product</button></div>
         </div>
         <div id="productsOp"></div>
 
@@ -39,6 +40,10 @@
         var products=[];
         var pMsg = "";
         var productsOp="";
+        var updateProductId = "";
+        var addBtn = "";
+        var updateBtn = "";
+
         getInput();
         function getInput(){
             pName = document.getElementById('pName');
@@ -47,6 +52,43 @@
             pTotal = document.getElementById('pTotal');
             pMsg = document.getElementById('pMsg');
             productsOp = document.getElementById('productsOp');
+            addBtn = document.getElementById('addBtn');
+            updateBtn = document.getElementById('updateBtn');
+            if(updateProductId == "")                
+                updateBtn.style.display = "none";
+        }
+
+        function resetForm(){
+            pName.value = "";
+            pPrice.value = "";
+            pQnty.value = "";
+            pTotal.value = "";
+        }
+
+        function saveExistingProduct(){
+            let product = { "pName":pName.value,
+                            "pPrice": pPrice.value,
+                            "pQnty": pQnty.value,
+                            "pTotal": pTotal.value
+            }
+            let apiURL = "https://retoolapi.dev/u1ypSw/billingData/"+updateProductId;
+            fetch(apiURL, {
+                method:'PUT',
+                headers:{
+                    'Content-Type':'application/json;charset=UTF-8'
+                },
+                body: JSON.stringify(product)
+            })
+            .then(response => {
+                if(response.ok){
+                    pMsg.innerHTML = "Product Updated Successfully";
+                    updateProductId = "";
+                    updateBtn.style.display = "none";
+                    addBtn.style.display = "block";
+                    getBillingData();
+                    resetForm();
+                }
+            })
         }
         function generateTotal(){
             getInput();
@@ -73,6 +115,7 @@
                 if(response.ok){
                     pMsg.innerHTML = "Product Added Successfully";
                     getBillingData();
+                    resetForm();
                 }
             })
         }
@@ -88,13 +131,25 @@
                                 '<div class="col">' + product.pQnty+'</div>'+
                                 '<div class="col">' + product.pTotal+'</div>'+
                                 '<div class="col">'+
-                                    '<button type="button" class="btn btn-warning">Update</button>'+
+                                    '<button type="button" class="btn btn-warning" onclick="loadExistingData('+product.id+')">Update</button>'+
                                     '<button type="button" class="btn btn-danger" onclick="deleteProduct('+product.id+')">Delete</button>'+
                                 '</div>'+
                             '</div>';
             }
             console.log(result);
             productsOp.innerHTML = result;
+        }
+
+        function loadExistingData(productId){
+            console.log(productId);
+            updateProductId = productId;
+            let product = products.filter(product => product.id == productId)[0];
+            pName.value = product.pName;
+            pPrice.value = product.pPrice;
+            pQnty.value = product.pQnty;
+            pTotal.value = product.pTotal;
+            addBtn.style.display = "none";
+            updateBtn.style.display = "block";
         }
         
         function getBillingData(){
