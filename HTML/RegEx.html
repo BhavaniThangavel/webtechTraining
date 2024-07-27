@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=,initial-scale="1.0">
+    <title>RegEx Example</title>
+</head>
+<body>
+    <h1>RegEx</h1>
+   <script>
+    function regExample(){
+        console.log("Regular Expression is.......");
+        let regEx = new  RegExp('[0-9]');
+        console.log(regEx.test('8578209'));
+        console.log(regEx.test('vhjvj'));
+        console.log(regEx.test('857fuf809'));
+        console.log(regEx.exec('jf356jhf'));
+
+
+        let str = "Hai5 All!";
+        console.log(str.match('[a-z]'));
+        console.log(str.search('[0-9]'));
+        str = "9812345678";
+        regEx = /^[6-9]+[0-9]{9}$/;
+        console.log(regEx.test(str));
+        str = "1234567890";
+        console.log(regEx.test(str));
+        str = "812345677867";
+        console.log(regEx.test(str));
+        str = "812345677867";
+        console.log(regEx.test(str));
+        str = "81234tyh567";
+        console.log(regEx.test(str));
+
+
+
+
+    }
+    regExample();
+</script>
+   
+
+
+
+</body>
+</html>
+
+
+
+
